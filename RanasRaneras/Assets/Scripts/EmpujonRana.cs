@@ -20,9 +20,17 @@ public class EmpujonRana : MonoBehaviour
         
     }
 
-    public void Empujar (InputAction.CallbackContext context)
+    public void Activar()
     {
         anim.SetTrigger("Pegar");
+    }
+
+    public void Fire(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            anim.SetTrigger("Pegar");
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
