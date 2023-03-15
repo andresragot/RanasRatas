@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 220886773690226831}
   - component: {fileID: 4268782094043227556}
   - component: {fileID: 5047583348013551544}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cubo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -175,7 +175,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6011154531411466014}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RanaCheck
   m_TagString: Untagged
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}

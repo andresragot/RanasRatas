@@ -24,6 +24,7 @@ public class MatarRana : MonoBehaviour
     {
         if (DetectarRana())
         {
+            Debug.Log(raycast.collider.tag);
             if(raycast.collider!=null && raycast.collider.tag == "Rana")
             {
                 Corazones cora = raycast.collider.GetComponent<Corazones>();
@@ -34,7 +35,7 @@ public class MatarRana : MonoBehaviour
 
     private bool DetectarRana()
     {
-        raycast = Physics2D.BoxCast(ranaCheck.position, box.bounds.size, 0, Vector2.down,ranaLayer);
+        raycast = Physics2D.BoxCast(ranaCheck.position, box.bounds.size, 0, Vector2.down, 1, ranaLayer);
         return raycast;
     }
 }
