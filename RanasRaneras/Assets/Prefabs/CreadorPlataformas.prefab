@@ -45,8 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabPlataforma: {fileID: 220886773690226824, guid: b41eb289075c6564fbb4f717910a59a8, type: 3}
-  limiteInferior: -8.82
-  limiteSuperior: 8.8
+  limiteInferior: -9
+  limiteSuperior: 9
   posicionY: 8
   valorActualTimer: 0
   timer: 2

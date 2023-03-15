@@ -15,7 +15,7 @@ public class CaidaPlataformas : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        valorActualTimer=timer;
+        valorActualTimer = timer;
         valorInicialTimer2 = timer2;
     }
 
@@ -46,7 +46,7 @@ public class CaidaPlataformas : MonoBehaviour
     void CrearPlataforma()
     {
         GameObject clon = Instantiate(prefabPlataforma);
-        float x = Random.Range(limiteInferior, limiteSuperior);
+        float x = (int)Random.Range(limiteInferior, limiteSuperior);
         clon.transform.position = new Vector3(x, posicionY, 0);
     }
    

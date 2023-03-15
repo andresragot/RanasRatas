@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Lino.unity
+    guid: 98369365219964f4f9c1b8aa9034abd2
+  - enabled: 1
     path: Assets/Scenes/Ragot.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects: {}

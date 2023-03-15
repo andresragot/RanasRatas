@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Corazones : MonoBehaviour
 {
@@ -9,9 +10,19 @@ public class Corazones : MonoBehaviour
     Image[] corazon;
 
     [SerializeField]
-    Sprite[] corazones;
+    GameObject gameOver;
 
+    int _vida = 3;
 
+    public int Vida
+    {
+        get { return _vida; }
+        set
+        {
+            _vida = value;
+            CambiarCorazon(_vida);
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -22,16 +33,17 @@ public class Corazones : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Vida <= 0)
+        {
+            gameOver.SetActive(true);
+            Time.timeScale = 0;
+        }
     }
 
     public void CambiarCorazon(int vida)
     {
-        /*for(int i = 3-vida; i < vida; i++)
-        {
-            corazon[i].sprite = corazones[1];
-        }*/
-
-        corazon[vida].sprite = corazones[1];
+        SceneManager.LoadScene(0);
+        corazon[vida].color = Color.black;
+        
     }
 }
