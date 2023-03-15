@@ -46,4 +46,12 @@ public class Corazones : MonoBehaviour
         corazon[vida].color = Color.black;
         
     }
+
+    /*public void SceneC()
+    {
+        if(Vida >= 0)
+        {
+            SceneManager.LoadScene("DeathScene");
+        }
+    }*/
 }

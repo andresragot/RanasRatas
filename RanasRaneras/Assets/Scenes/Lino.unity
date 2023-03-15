@@ -178,6 +178,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CreadorPlataformas
       objectReference: {fileID: 0}
+    - target: {fileID: 9174283944420794171, guid: 1594004e693d424499bb82cc83cc8c29, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1594004e693d424499bb82cc83cc8c29, type: 3}
 --- !u!1 &388427588
