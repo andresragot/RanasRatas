@@ -25,7 +25,7 @@
                 },
                 {
                     "name": "Jump",
-                    "type": "Value",
+                    "type": "Button",
                     "id": "58c93d12-b5d0-4907-8431-5a5fa1cee86a",
                     "expectedControlType": "Button",
                     "processors": "",
@@ -84,7 +84,7 @@
                     "path": "<Keyboard>/upArrow",
                     "interactions": "Tap",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Keyboard&Mouse",
                     "action": "Jump",
                     "isComposite": false,
                     "isPartOfComposite": false
