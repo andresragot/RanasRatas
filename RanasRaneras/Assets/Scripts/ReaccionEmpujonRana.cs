@@ -18,11 +18,12 @@ public class ReaccionEmpujonRana : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        float magnitude = 100f;
+        Vector2 direction = transform.position - collision.transform.position;
         if (collision.gameObject.tag == "Lengua")
         {
-            float force = 100f;
-            Vector3 direction = transform.position - collision.transform.position;
-            rb.AddForce(direction * force);
+            direction.Normalize();
+            rb.AddForce(-direction * magnitude);
         }
     }
 }
