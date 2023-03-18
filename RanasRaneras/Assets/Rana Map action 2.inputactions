@@ -82,7 +82,7 @@
                     "name": "",
                     "id": "2915d01e-feec-48a6-b9fc-a847882c8afe",
                     "path": "<Keyboard>/upArrow",
-                    "interactions": "Tap",
+                    "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "Jump",
