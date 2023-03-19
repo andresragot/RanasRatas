@@ -20,7 +20,7 @@ public class Reset : MonoBehaviour
 
     public void click()
     {
-        SceneManager.LoadScene("Lino");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Lino");
     }
 
     public void Exit()

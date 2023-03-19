@@ -42,7 +42,7 @@ public class Corazones : MonoBehaviour
 
     public void CambiarCorazon(int vida)
     {
-        SceneManager.LoadScene(0);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
         corazon[vida].color = Color.black;
         
     }
