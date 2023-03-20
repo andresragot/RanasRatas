@@ -178,6 +178,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CreadorPlataformas
       objectReference: {fileID: 0}
+    - target: {fileID: 9174283944420794171, guid: 1594004e693d424499bb82cc83cc8c29, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1594004e693d424499bb82cc83cc8c29, type: 3}
 --- !u!1 &388427588
@@ -776,7 +780,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2817252389286424214, guid: 4a91227c9cde67040946e08de702e5e2, type: 3}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2817252390529657361, guid: 4a91227c9cde67040946e08de702e5e2, type: 3}
       propertyPath: m_RootOrder
@@ -866,6 +870,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4c6bf83d0b64394ea88aecf3eea2402, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 2817252389400770725}
+--- !u!50 &2817252389400770725 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 2817252390529657362, guid: 4a91227c9cde67040946e08de702e5e2, type: 3}
+  m_PrefabInstance: {fileID: 2817252389400770710}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5092762943437906983
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -891,6 +901,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5092762943587948438, guid: c3886369de614bb478f4c3504128244d, type: 3}
       propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5092762943587948438, guid: c3886369de614bb478f4c3504128244d, type: 3}
+      propertyPath: m_AutoTiling
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5092762943587948438, guid: c3886369de614bb478f4c3504128244d, type: 3}
+      propertyPath: m_UsedByEffector
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5092762943587948438, guid: c3886369de614bb478f4c3504128244d, type: 3}
+      propertyPath: m_UsedByComposite
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5092762943587948438, guid: c3886369de614bb478f4c3504128244d, type: 3}
@@ -989,3 +1011,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4c6bf83d0b64394ea88aecf3eea2402, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 5092762943437906998}
+--- !u!50 &5092762943437906998 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 5092762944209808204, guid: c3886369de614bb478f4c3504128244d, type: 3}
+  m_PrefabInstance: {fileID: 5092762943437906983}
+  m_PrefabAsset: {fileID: 0}
