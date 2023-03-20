@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+
+    CargaryGuardar cargaryGuardar;
     [System.Serializable]
+
+    
     public class MyEvent : UnityEngine.Events.UnityEvent
     {
 
@@ -19,11 +23,12 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     MyIntEvent whenCambioVida1, whenCambioVida2;
 
-    private int vida1 = 3, vida2 = 3;
+    static int vida1 = 3, vida2 = 3;
 
 
     public int Vida1
     {
+
         get { return vida1; }
         set
         {
@@ -35,12 +40,14 @@ public class GameManager : MonoBehaviour
 
     public int Vida2
     {
+
         get { return vida2; }
         set
         {
             vida2 = value;
             whenCambioVida2.Invoke(vida2);
         }
+
     }
 
 
@@ -49,7 +56,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        cargaryGuardar.Guardar();
     }
 
     // Update is called once per frame
