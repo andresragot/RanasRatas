@@ -9,6 +9,7 @@ TagManager:
   - Rana
   - Lengua
   - GameOver
+  - Rana2
   layers:
   - Default
   - TransparentFX

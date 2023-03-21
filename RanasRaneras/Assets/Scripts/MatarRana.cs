@@ -36,8 +36,23 @@ public class MatarRana : MonoBehaviour
                 }
                 Corazones cora = raycast.collider.GetComponent<Corazones>();
                 cora.Vida--;
+
             }
         }
+
+        if (DetectarRana2())
+        {
+            if (raycast.collider != null && raycast.collider.tag == "Rana2")
+            {
+                if (rb.constraints == RigidbodyConstraints2D.FreezeAll)
+                {
+                    return;
+                }
+                Corazones1 cora2 = raycast.collider.GetComponent<Corazones1>();
+                cora2.Vida2--;
+            }
+        }
+
         else if (DetectarSuelo())
         {
             if (raycastGround.collider.gameObject != this && raycastGround.collider != null)
@@ -48,6 +63,12 @@ public class MatarRana : MonoBehaviour
     }
 
     private bool DetectarRana()
+    {
+        raycast = Physics2D.BoxCast(ranaCheck.position, box.bounds.size, 0, Vector2.down, 1, ranaLayer);
+        return raycast;
+    }
+
+    private bool DetectarRana2()
     {
         raycast = Physics2D.BoxCast(ranaCheck.position, box.bounds.size, 0, Vector2.down, 1, ranaLayer);
         return raycast;
