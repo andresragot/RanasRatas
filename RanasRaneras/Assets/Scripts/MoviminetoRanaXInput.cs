@@ -35,6 +35,11 @@ public class MoviminetoRanaXInput : MonoBehaviour
             rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
         }
 
+        if (current_animation != "Rana1Caminar" || current_animation != "Rana2Pegar")
+        {
+            //rb.isKinematic = true;
+        }
+
         if(horizontal > 0f)
         {
             //rb.velocity = new Vector2(1 * speed, rb.velocity.y);
@@ -105,8 +110,12 @@ public class MoviminetoRanaXInput : MonoBehaviour
 
     public void Fire(InputAction.CallbackContext context)
     {
-        if(context.performed)
+        if (context.performed)
+        {
             anim.SetTrigger("Fire");
+
+            //rb.isKinematic = false;
+        }
     }
 
     public void ActivarLengua()

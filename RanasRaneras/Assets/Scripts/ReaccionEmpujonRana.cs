@@ -6,7 +6,7 @@ public class ReaccionEmpujonRana : MonoBehaviour
 {
     [SerializeField] float magnitude = 1000f;
 
-    [SerializeField] Rigidbody2D rb;
+    Rigidbody2D rb;
     
     // Start is called before the first frame update
     void Start()
@@ -18,7 +18,7 @@ public class ReaccionEmpujonRana : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rb.isKinematic = false;
+        //rb.isKinematic = false;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -35,6 +35,14 @@ public class ReaccionEmpujonRana : MonoBehaviour
         if (collision.gameObject.tag == "Lengua")
         {
             rb.isKinematic = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Lengua")
+        {
+            rb.isKinematic = false;
         }
     }
 

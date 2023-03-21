@@ -6,21 +6,16 @@ using UnityEngine.SceneManagement;
 
 public class Corazones : MonoBehaviour
 {
-    [SerializeField]
-    Image[] corazon;
+     int _vida = 3;
 
-    //[SerializeField]
-    //GameObject gameOver;
-
-     static int _vida = 3;
-
-    CargaryGuardar cargaryGuardar;
-
-    private void Awake()
+    [System.Serializable]
+    public class MyIntEvent : UnityEngine.Events.UnityEvent<int>
     {
-        cargaryGuardar = GetComponent<CargaryGuardar>();
+
     }
 
+    [SerializeField]
+    MyIntEvent whenCambioVida;
 
     public int Vida
     {
@@ -28,44 +23,7 @@ public class Corazones : MonoBehaviour
         set
         {
             _vida = value;
-            CambiarCorazon(_vida);
+            whenCambioVida.Invoke(_vida);
         }
     }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (Vida <= 0)
-        {
-            //gameOver.SetActive(true);
-            Time.timeScale = 0;
-            cargaryGuardar.Guardar();
-        }
-
-        //if (Vida2 <= 0)
-        //{
-        //    //gameOver.SetActive(true);
-        //    Time.timeScale = 0;
-        //    cargaryGuardar.Guardar();
-        //}
-    }
-    public void CambiarCorazon(int vida)
-    {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(1);
-        corazon[vida].color = Color.black;
-    }
-
-    /*public void SceneC()
-    {
-        if(Vida >= 0)
-        {
-            SceneManager.LoadScene("DeathScene");
-        }
-    }*/
 }

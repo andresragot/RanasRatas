@@ -36,20 +36,8 @@ public class MatarRana : MonoBehaviour
                 }
                 Corazones cora = raycast.collider.GetComponent<Corazones>();
                 cora.Vida--;
+                Destroy(gameObject);
 
-            }
-        }
-
-        if (DetectarRana2())
-        {
-            if (raycast.collider != null && raycast.collider.tag == "Rana2")
-            {
-                if (rb.constraints == RigidbodyConstraints2D.FreezeAll)
-                {
-                    return;
-                }
-                Corazones1 cora2 = raycast.collider.GetComponent<Corazones1>();
-                cora2.Vida2--;
             }
         }
 
