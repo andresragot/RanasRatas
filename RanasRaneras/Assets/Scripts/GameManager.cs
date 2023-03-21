@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.InputSystem;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -73,5 +74,18 @@ public class GameManager : MonoBehaviour
     public void QuitarVida2()
     {
         Vida2--;
+    }
+
+    public void Regresar()
+    {
+        Time.timeScale = 1;
+    }
+
+    public void Pausa(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            Time.timeScale = 0;
+        }
     }
 }

@@ -69,12 +69,12 @@ public class Corazones : MonoBehaviour
 
     public void CambiarCorazon(int vida)
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(1);
         corazon[vida].color = Color.black;    
     }
     public void CambiarCorazon2(int vida2)
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(1);
         corazon[vida2].color = Color.black;
     }
 
