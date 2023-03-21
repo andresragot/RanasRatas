@@ -154,7 +154,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   corazon: []
   gameOver: {fileID: 0}
-  _vida: 3
 --- !u!4 &13714488
 Transform:
   m_ObjectHideFlags: 0
@@ -448,7 +447,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1c9ff9428dd08545abd82af603783c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  a: {fileID: 13714487}
+  a: {fileID: 0}
 --- !u!4 &1350635180
 Transform:
   m_ObjectHideFlags: 0
@@ -866,6 +865,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2817252389286423913, guid: 4a91227c9cde67040946e08de702e5e2, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2817252389286423914, guid: 4a91227c9cde67040946e08de702e5e2, type: 3}
+      propertyPath: m_TagString
+      value: Lengua
+      objectReference: {fileID: 0}
+    - target: {fileID: 2817252389286424214, guid: 4a91227c9cde67040946e08de702e5e2, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2817252389286424214, guid: 4a91227c9cde67040946e08de702e5e2, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 2.4375
+      objectReference: {fileID: 0}
+    - target: {fileID: 2817252389286424214, guid: 4a91227c9cde67040946e08de702e5e2, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.6875
+      objectReference: {fileID: 0}
     - target: {fileID: 2817252390529657361, guid: 4a91227c9cde67040946e08de702e5e2, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -938,7 +957,19 @@ MonoBehaviour:
   - {fileID: 1846512987954347470}
   - {fileID: 1846512987954347469}
   gameOver: {fileID: 388427588}
-  _vida: 3
+--- !u!114 &2817252389400770720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2817252389400770711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4c6bf83d0b64394ea88aecf3eea2402, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  magnitude: 100
 --- !u!1001 &5092762943437906983
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -946,6 +977,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5092762943587948424, guid: c3886369de614bb478f4c3504128244d, type: 3}
+      propertyPath: m_TagString
+      value: Lengua
+      objectReference: {fileID: 0}
+    - target: {fileID: 5092762943587948438, guid: c3886369de614bb478f4c3504128244d, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5092762944209808201, guid: c3886369de614bb478f4c3504128244d, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -1018,4 +1057,16 @@ MonoBehaviour:
   - {fileID: 1846512987954347467}
   - {fileID: 1846512987954347468}
   gameOver: {fileID: 388427588}
-  _vida: 3
+--- !u!114 &5092762943437906986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5092762943437906984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4c6bf83d0b64394ea88aecf3eea2402, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  magnitude: 100

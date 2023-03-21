@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class ReaccionEmpujonRana : MonoBehaviour
 {
-    [SerializeField] Rigidbody2D rb;
+    [SerializeField]
+    float magnitude = 100f;
+
+    Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()
     {
-        rb= GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -18,20 +21,18 @@ public class ReaccionEmpujonRana : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        float magnitude = 100f;
-        Vector2 direction = transform.position - collision.transform.position;
         if (collision.gameObject.tag == "Lengua")
         {
+            Vector2 direction = transform.position - collision.transform.position;
             direction.Normalize();
             rb.AddForce(direction * magnitude);
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        float magnitude = 100f;
-        Vector2 direction = transform.position - collision.transform.position;
         if (collision.gameObject.tag == "Lengua")
         {
+            Vector2 direction = transform.position - collision.transform.position;
             direction.Normalize();
             rb.AddForce(direction * magnitude);
         }
