@@ -48,12 +48,12 @@ public class Corazones : MonoBehaviour
             cargaryGuardar.Guardar();
         }
 
-        if (Vida2 <= 0)
-        {
-            //gameOver.SetActive(true);
-            Time.timeScale = 0;
-            cargaryGuardar.Guardar();
-        }
+        //if (Vida2 <= 0)
+        //{
+        //    //gameOver.SetActive(true);
+        //    Time.timeScale = 0;
+        //    cargaryGuardar.Guardar();
+        //}
     }
     public void CambiarCorazon(int vida)
     {
