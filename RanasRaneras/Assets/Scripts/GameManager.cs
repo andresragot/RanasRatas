@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
 
     CargaryGuardar cargaryGuardar;
-    [System.Serializable]
 
-    
+    [System.Serializable] 
     public class MyEvent : UnityEngine.Events.UnityEvent
     {
 
@@ -24,8 +24,13 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     MyIntEvent whenCambioVida1, whenCambioVida2;
 
+
+    [SerializeField]
+    GameObject victoria1, victoria2;
+
     static int vida1 = 3, vida2 = 3;
 
+    Image vic1, vic2;
 
     public int Vida1
     {
@@ -51,19 +56,36 @@ public class GameManager : MonoBehaviour
 
     }
 
+    
 
 
 
     // Start is called before the first frame update
     void Start()
     {
-        cargaryGuardar.Guardar();
+        vic1 = victoria1.GetComponent<Image>();
+        vic2 = victoria2.GetComponent<Image>();
+        //cargaryGuardar.Guardar();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (vida1 <= 0)
+        {
+            victoria2.SetActive(true);
+            victoria2.GetComponent<Animator>().SetBool("Activado", true);
+        }
+        else if (vida2 <= 0)
+        {
+            victoria1.SetActive(true);
+            victoria1.GetComponent<Animator>().SetBool("Activado", true);
+        }
+
+        if (vic1.color.a==1 || vic2.color.a==1)
+        {
+            Time.timeScale = 0;
+        }
     }
 
     public void QuitarVida1()

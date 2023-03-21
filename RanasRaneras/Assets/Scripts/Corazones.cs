@@ -9,8 +9,8 @@ public class Corazones : MonoBehaviour
     [SerializeField]
     Image[] corazon;
 
-    [SerializeField]
-    GameObject gameOver;
+    //[SerializeField]
+    //GameObject gameOver;
 
      static int _vida = 3;
      static int _vida2 = 3;
@@ -54,14 +54,14 @@ public class Corazones : MonoBehaviour
     {
         if (Vida <= 0)
         {
-            gameOver.SetActive(true);
+            //gameOver.SetActive(true);
             Time.timeScale = 0;
             cargaryGuardar.Guardar();
         }
 
         if (Vida2 <= 0)
         {
-            gameOver.SetActive(true);
+            //gameOver.SetActive(true);
             Time.timeScale = 0;
             cargaryGuardar.Guardar();
         }
