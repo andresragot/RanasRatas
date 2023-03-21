@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class ReaccionEmpujonRana : MonoBehaviour
 {
-    [SerializeField]
-    float magnitude = 100f;
+    [SerializeField] float magnitude = 1000f;
 
-    Rigidbody2D rb;
+    [SerializeField] Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,23 +27,14 @@ public class ReaccionEmpujonRana : MonoBehaviour
             rb.AddForce(direction * magnitude);
         }
     }
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Lengua")
-        {
-            Vector2 direction = transform.position - collision.transform.position;
-            direction.Normalize();
-            rb.AddForce(direction * magnitude);
-        }
-    }
-    //private void OnCollisionEnter2D(Collision2D collision)
+    //private void OnTriggerExit2D(Collider2D collision)
     //{
-    //    float magnitude = 100f;
-    //    Vector2 direction = transform.position - collision.transform.position;
     //    if (collision.gameObject.tag == "Lengua")
     //    {
+    //        Vector2 direction = transform.position - collision.transform.position;
     //        direction.Normalize();
     //        rb.AddForce(direction * magnitude);
     //    }
     //}
+
 }
