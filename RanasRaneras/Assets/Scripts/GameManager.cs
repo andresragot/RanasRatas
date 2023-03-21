@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 {
 
     CargaryGuardar cargaryGuardar;
+    [System.Serializable]
 
     [System.Serializable] 
     public class MyEvent : UnityEngine.Events.UnityEvent

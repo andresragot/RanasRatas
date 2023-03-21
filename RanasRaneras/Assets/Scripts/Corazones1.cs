@@ -4,15 +4,15 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class Corazones : MonoBehaviour
+public class Corazones1 : MonoBehaviour
 {
     [SerializeField]
-    Image[] corazon;
+    Image[] corazon2;
 
-    //[SerializeField]
-    //GameObject gameOver;
+    [SerializeField]
+    GameObject gameOver;
 
-     static int _vida = 3;
+     static int _vida2 = 3;
 
     CargaryGuardar cargaryGuardar;
 
@@ -21,14 +21,13 @@ public class Corazones : MonoBehaviour
         cargaryGuardar = GetComponent<CargaryGuardar>();
     }
 
-
-    public int Vida
+    public int Vida2
     {
-        get { return _vida; }
+        get { return _vida2; }
         set
         {
-            _vida = value;
-            CambiarCorazon(_vida);
+            _vida2 = value;
+            CambiarCorazon2(_vida2);
         }
     }
 
@@ -41,24 +40,16 @@ public class Corazones : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Vida <= 0)
-        {
-            //gameOver.SetActive(true);
-            Time.timeScale = 0;
-            cargaryGuardar.Guardar();
-        }
-
         if (Vida2 <= 0)
         {
-            //gameOver.SetActive(true);
+            gameOver.SetActive(true);
             Time.timeScale = 0;
-            cargaryGuardar.Guardar();
         }
     }
-    public void CambiarCorazon(int vida)
+    public void CambiarCorazon2(int vida2)
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene(1);
-        corazon[vida].color = Color.black;
+        corazon2[vida2].color = Color.white;
     }
 
     /*public void SceneC()
