@@ -26,4 +26,9 @@ public class Corazones : MonoBehaviour
             whenCambioVida.Invoke(_vida);
         }
     }
+
+    public void setVida(int a)
+    {
+        _vida = a;
+    }
 }

@@ -79,8 +79,8 @@ public class GameManager : MonoBehaviour
 
         CambiarVida1(Vida1);
         CambiarVida2(Vida2);
-        Rana1.GetComponent<Corazones>().Vida = Vida1;
-        Rana2.GetComponent<Corazones>().Vida = Vida2;
+        Rana1.GetComponent<Corazones>().setVida(Vida1);
+        Rana2.GetComponent<Corazones>().setVida(Vida2);
     }
 
 

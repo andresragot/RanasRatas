@@ -8,7 +8,7 @@ public class MoviminetoRanaXInput : MonoBehaviour
     [Header("Movimento De Rana")]
     public Transform groundcheck;
     public LayerMask groundlayer, ranaLayer;
-    public Rigidbody2D rb;
+    Rigidbody2D rb;
     public float speed = 3;
     public float horizontal;
     [SerializeField] private float jumpingpower = 8f;
@@ -24,6 +24,7 @@ public class MoviminetoRanaXInput : MonoBehaviour
         boxCollider = GetComponent<BoxCollider2D>();
         anim = GetComponent<Animator>();
         empj = GetComponentInChildren<EmpujonRana>();
+        rb = GetComponent<Rigidbody2D>();
     }
     // Update is called once per frame
     void Update()
@@ -60,9 +61,16 @@ public class MoviminetoRanaXInput : MonoBehaviour
         }
 
         RaycastHit2D raycastHit = Physics2D.BoxCast(groundcheck.position, boxCollider.bounds.size, 0, Vector2.down, 0.1f, ranaLayer);
-        if (raycastHit.collider!=null && raycastHit.collider.tag == "Rana" && raycastHit.collider.gameObject != this)
+        if (raycastHit.collider!=null /*&& raycastHit.collider.gameObject != this.gameObject*/ && raycastHit.collider.tag == "Rana")
         {
-            rb.AddForce(new Vector2(rb.velocity.x, 2), ForceMode2D.Impulse);
+            if (raycastHit.collider.gameObject == gameObject)
+            {
+                return;
+            }
+            else
+            {
+                rb.AddForce(new Vector2(rb.velocity.x, 2), ForceMode2D.Impulse);
+            }
         }
 
     }
