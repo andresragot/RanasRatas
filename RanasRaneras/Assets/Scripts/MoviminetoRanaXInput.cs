@@ -18,6 +18,8 @@ public class MoviminetoRanaXInput : MonoBehaviour
     private Animator anim;
     AnimatorClipInfo[] animatorinfo;
     EmpujonRana empj;
+
+    float SpeedF;
     // Start is called before the first frame update
     private void Start()
     {
@@ -25,6 +27,7 @@ public class MoviminetoRanaXInput : MonoBehaviour
         anim = GetComponent<Animator>();
         empj = GetComponentInChildren<EmpujonRana>();
         rb = GetComponent<Rigidbody2D>();
+        SpeedF = speed;
     }
     // Update is called once per frame
     void Update()
@@ -60,8 +63,9 @@ public class MoviminetoRanaXInput : MonoBehaviour
             anim.SetBool("Caminar", false);
         }
 
-        RaycastHit2D raycastHit = Physics2D.BoxCast(groundcheck.position, boxCollider.bounds.size, 0, Vector2.down, 0.1f, ranaLayer);
-        if (raycastHit.collider!=null /*&& raycastHit.collider.gameObject != this.gameObject*/ && raycastHit.collider.tag == "Rana")
+        //RaycastHit2D raycastHit = Physics2D.BoxCast(groundcheck.position, boxCollider.bounds.size, 0, Vector2.down, 0.1f, ranaLayer);
+        RaycastHit2D raycastHit = Physics2D.Raycast(groundcheck.position, Vector2.down, 0.1f, ranaLayer);
+        if (raycastHit.collider!=null /*&& raycastHit.collider.gameObject != this.gameObject*/ && raycastHit.collider.tag == "Rana" && raycastHit.collider.GetComponent<MoviminetoRanaXInput>().Isgrounded())
         {
             if (raycastHit.collider.gameObject == gameObject)
             {
@@ -75,6 +79,60 @@ public class MoviminetoRanaXInput : MonoBehaviour
 
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Rana")
+        {
+            rb.gravityScale = 10;
+            /*Vector2 direction = transform.position - collision.transform.position;
+            direction.Normalize();
+            rb.AddForce(direction * 2);*/
+            speed = 0;
+        }
+        else if (collision.gameObject.tag == "Pared")
+        {
+            rb.gravityScale = 10;
+            speed = 0;
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Rana")
+        {
+            rb.gravityScale = 4.5f;
+            speed = SpeedF;
+            /*Vector2 direction = transform.position - collision.transform.position;
+            direction.Normalize();
+            rb.AddForce(direction * 2);*/
+        }
+        else if (collision.gameObject.tag == "Pared")
+        {
+            rb.gravityScale = 4.5f;
+            speed = SpeedF;
+        }
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (Isgrounded())
+        {
+            if (collision.gameObject.tag == "Rana")
+            {
+                rb.gravityScale = 4.5f;
+                speed = SpeedF;
+                /*Vector2 direction = transform.position - collision.transform.position;
+                direction.Normalize();
+                rb.AddForce(direction * 2);*/
+            }
+            else if (collision.gameObject.tag == "Pared")
+            {
+                rb.gravityScale = 4.5f;
+                speed = SpeedF;
+            }
+        }
+    }
+
     private void FixedUpdate()
     {
 
@@ -84,7 +142,7 @@ public class MoviminetoRanaXInput : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    private bool Isgrounded()
+    public bool Isgrounded()
     {
         return Physics2D.OverlapCircle(groundcheck.position, 0.2f, groundlayer);
     }

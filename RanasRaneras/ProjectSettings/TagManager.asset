@@ -10,6 +10,7 @@ TagManager:
   - Lengua
   - GameOver
   - Rana2
+  - Pared
   layers:
   - Default
   - TransparentFX

@@ -22,10 +22,6 @@ public class GameManager : MonoBehaviour
     }
 
     [SerializeField]
-    MyIntEvent whenCambioVida1, whenCambioVida2;
-
-
-    [SerializeField]
     GameObject victoria1, victoria2;
 
     [SerializeField]
@@ -44,7 +40,6 @@ public class GameManager : MonoBehaviour
         set
         {
             vida1 = value;
-            Singleton.whenCambioVida1.Invoke(vida1);
         }
     }
 
@@ -56,7 +51,6 @@ public class GameManager : MonoBehaviour
         set
         {
             vida2 = value;
-            Singleton.whenCambioVida2.Invoke(vida2);
         }
 
     }
