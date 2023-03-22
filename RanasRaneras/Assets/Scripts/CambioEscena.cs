@@ -8,6 +8,8 @@ public class CambioEscena : MonoBehaviour
     public void NewGame()
     {
         SceneManager.LoadScene(1);
+        GameManager.Vida1 = 3;
+        GameManager.Vida2 = 3;
     }
 
     public void Menu()

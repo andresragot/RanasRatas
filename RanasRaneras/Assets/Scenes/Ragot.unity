@@ -1709,6 +1709,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1211638452}
   m_CullTransparentMesh: 1
+--- !u!1 &1246775167 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1702557010701089193, guid: 7184c9f13bd0d5f4c9033620e65c0fd6, type: 3}
+  m_PrefabInstance: {fileID: 335583379}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1306734528 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6617233561178091889, guid: 7184c9f13bd0d5f4c9033620e65c0fd6, type: 3}
@@ -2852,9 +2857,17 @@ PrefabInstance:
       value: Rana 1
       objectReference: {fileID: 0}
     - target: {fileID: 2817252390529657365, guid: 4a91227c9cde67040946e08de702e5e2, type: 3}
+      propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1246775167}
+    - target: {fileID: 2817252390529657365, guid: 4a91227c9cde67040946e08de702e5e2, type: 3}
       propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1008771016}
+    - target: {fileID: 2817252390529657365, guid: 4a91227c9cde67040946e08de702e5e2, type: 3}
+      propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
     - target: {fileID: 3336744694054149969, guid: 4a91227c9cde67040946e08de702e5e2, type: 3}
       propertyPath: whenCambioVida.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -2934,9 +2947,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5092762944209808205, guid: c3886369de614bb478f4c3504128244d, type: 3}
+      propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1246775167}
+    - target: {fileID: 5092762944209808205, guid: c3886369de614bb478f4c3504128244d, type: 3}
       propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1008771016}
+    - target: {fileID: 5092762944209808205, guid: c3886369de614bb478f4c3504128244d, type: 3}
+      propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
     - target: {fileID: 5092762944209808206, guid: c3886369de614bb478f4c3504128244d, type: 3}
       propertyPath: m_Name
       value: Rana 2
