@@ -16,11 +16,18 @@ public class MatarRana : MonoBehaviour
 
     RaycastHit2D raycast, raycastGround;
 
+    [SerializeField] float timer = 15f;
+    float timerInicial;
+
+    RigidbodyConstraints2D originalConstraints;
+
     // Start is called before the first frame update
     void Start()
     {
         box = GetComponent<BoxCollider2D>();
         rb = GetComponent<Rigidbody2D>();
+        timerInicial = timer;
+        originalConstraints = rb.constraints;
     }
 
     // Update is called once per frame
@@ -37,7 +44,6 @@ public class MatarRana : MonoBehaviour
                 Corazones cora = raycast.collider.GetComponent<Corazones>();
                 cora.Vida--;
                 Destroy(gameObject);
-
             }
         }
 
@@ -46,8 +52,11 @@ public class MatarRana : MonoBehaviour
             if (raycastGround.collider.gameObject != this && raycastGround.collider != null)
             {
                 rb.constraints = RigidbodyConstraints2D.FreezeAll;
+                timer-=Time.deltaTime;
             }
+            rb.constraints = originalConstraints;
         }
+        borrarPlataforma();
     }
 
     private bool DetectarRana()
@@ -66,5 +75,14 @@ public class MatarRana : MonoBehaviour
     {
         raycastGround = Physics2D.Raycast(ranaCheck.position, Vector2.down, 0.1f, ground);
         return raycastGround;
+    }
+
+    private void borrarPlataforma()
+    {
+        if (timer <= 0)
+        {
+            Destroy(gameObject);
+            timer = timerInicial;
+        }
     }
 }
