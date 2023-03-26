@@ -50,9 +50,13 @@ public class DestructorSuelo : MonoBehaviour
             if (raycastGround.collider.gameObject != this && raycastGround.collider != null)
             {
                 rb.constraints = RigidbodyConstraints2D.FreezeAll;
+                Destroy(gameObject);
+                if (raycastGround.collider.gameObject.tag == "Plataforma")
+                {
+                    Destroy(raycastGround.collider.gameObject);
+                }
             }
         }
-        borrarPlataforma();
     }
 
     private bool DetectarRana()
@@ -71,11 +75,6 @@ public class DestructorSuelo : MonoBehaviour
     {
         raycastGround = Physics2D.Raycast(ranaCheck.position, Vector2.down, 0.1f, ground);
         return raycastGround;
-    }
-
-    private void borrarPlataforma()
-    {
-        Destroy(gameObject);
     }
 }
 

@@ -11,6 +11,7 @@ TagManager:
   - GameOver
   - Rana2
   - Pared
+  - Plataforma
   layers:
   - Default
   - TransparentFX
