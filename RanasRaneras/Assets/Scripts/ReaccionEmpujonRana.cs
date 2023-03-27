@@ -7,6 +7,8 @@ public class ReaccionEmpujonRana : MonoBehaviour
     [SerializeField] float magnitude = 1000f;
 
     Rigidbody2D rb;
+
+    CameraShake shake;
     
     // Start is called before the first frame update
     void Start()
@@ -18,7 +20,6 @@ public class ReaccionEmpujonRana : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //rb.isKinematic = false;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -28,6 +29,7 @@ public class ReaccionEmpujonRana : MonoBehaviour
             Vector2 direction = transform.position - collision.transform.position;
             direction.Normalize();
             rb.AddForce(direction * magnitude);
+            shake.Shake(1f, 30);
         }
     }
     private void OnTriggerStay2D(Collider2D collision)

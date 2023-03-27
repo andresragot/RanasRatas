@@ -485,7 +485,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4c6bf83d0b64394ea88aecf3eea2402, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  magnitude: 1000
+  magnitude: 500
 --- !u!114 &8197209123980671529
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -525,6 +525,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  WhenPegado:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &2815002384122410702
 GameObject:
   m_ObjectHideFlags: 0
