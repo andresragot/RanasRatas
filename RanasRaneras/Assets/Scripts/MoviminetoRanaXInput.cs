@@ -5,6 +5,12 @@ using UnityEngine.InputSystem;
 
 public class MoviminetoRanaXInput : MonoBehaviour
 {
+    GameManager c1;
+    GameManager c2;
+
+    public GameObject r1;
+
+
     [Header("Movimento De Rana")]
     public Transform groundcheck;
     public LayerMask groundlayer, ranaLayer;
@@ -15,6 +21,7 @@ public class MoviminetoRanaXInput : MonoBehaviour
     private bool facingright = true;
     private BoxCollider2D boxCollider;
 
+    private Animation Red;
     private Animator anim;
     AnimatorClipInfo[] animatorinfo;
     EmpujonRana empj;
@@ -28,6 +35,11 @@ public class MoviminetoRanaXInput : MonoBehaviour
         empj = GetComponentInChildren<EmpujonRana>();
         rb = GetComponent<Rigidbody2D>();
         SpeedF = speed;
+
+        Red = r1.GetComponent<Animation>();
+        Red["RanaLifeLoss"].layer = 123;
+
+        //life.CambiarVida1(d);
     }
     // Update is called once per frame
     void Update()
@@ -83,6 +95,17 @@ public class MoviminetoRanaXInput : MonoBehaviour
             {
                 anim.SetBool("Suelo", false);
             }
+        }
+        if (c1.counter < 3)
+        {
+            Red.Play("RanaLifeLoss");
+            Debug.Log("Se reprodujo");
+            
+        }
+        if (c2.counter2 < 3)
+        {
+            Red.Play("RanaLifeLoss2");
+            Debug.Log("Se produjo lo del 2");
         }
     }
 
