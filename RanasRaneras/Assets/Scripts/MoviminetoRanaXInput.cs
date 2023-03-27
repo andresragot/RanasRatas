@@ -164,7 +164,8 @@ public class MoviminetoRanaXInput : MonoBehaviour
     {
         if(context.performed && Isgrounded())
         {
-            rb.AddForce(new Vector2(rb.velocity.x, jumpingpower), ForceMode2D.Impulse);
+            //rb.AddForce(new Vector2(rb.velocity.x, jumpingpower), ForceMode2D.Impulse);
+            anim.SetTrigger("Saltar");
             //rb.velocity = new Vector2(rb.velocity.x, jumpingpower);
         }
 
@@ -172,6 +173,11 @@ public class MoviminetoRanaXInput : MonoBehaviour
         {
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
         }*/
+    }
+
+    public void AnimacionSaltar()
+    {
+        rb.AddForce(new Vector2(rb.velocity.x, jumpingpower), ForceMode2D.Impulse);
     }
 
     public void Fire(InputAction.CallbackContext context)
@@ -189,4 +195,8 @@ public class MoviminetoRanaXInput : MonoBehaviour
         empj.Activar();
     }
 
+    public void AnimacionMuerte()
+    {
+        anim.SetBool("Pegado", true);
+    }
 }

@@ -2434,6 +2434,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2815002383751694838, guid: c3886369de614bb478f4c3504128244d, type: 3}
   m_PrefabInstance: {fileID: 2815002383046903455}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1577471854 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2815002383751694832, guid: c3886369de614bb478f4c3504128244d, type: 3}
+  m_PrefabInstance: {fileID: 2815002383046903455}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1577471849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb365d0341500be4eadc7ccf6a7833a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1766331553
 GameObject:
   m_ObjectHideFlags: 0
@@ -2897,6 +2908,26 @@ PrefabInstance:
       value: Rana 2
       objectReference: {fileID: 0}
     - target: {fileID: 8197209123980671529, guid: c3886369de614bb478f4c3504128244d, type: 3}
+      propertyPath: WhenPegado.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8197209123980671529, guid: c3886369de614bb478f4c3504128244d, type: 3}
+      propertyPath: WhenPegado.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8197209123980671529, guid: c3886369de614bb478f4c3504128244d, type: 3}
+      propertyPath: WhenPegado.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1577471854}
+    - target: {fileID: 8197209123980671529, guid: c3886369de614bb478f4c3504128244d, type: 3}
+      propertyPath: WhenPegado.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8197209123980671529, guid: c3886369de614bb478f4c3504128244d, type: 3}
+      propertyPath: WhenPegado.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: AnimacionMuerte
+      objectReference: {fileID: 0}
+    - target: {fileID: 8197209123980671529, guid: c3886369de614bb478f4c3504128244d, type: 3}
       propertyPath: whenCambioVida.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1008771016}
@@ -2904,6 +2935,14 @@ PrefabInstance:
       propertyPath: whenCambioVida.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1008771016}
+    - target: {fileID: 8197209123980671529, guid: c3886369de614bb478f4c3504128244d, type: 3}
+      propertyPath: WhenPegado.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MoviminetoRanaXInput, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8197209123980671529, guid: c3886369de614bb478f4c3504128244d, type: 3}
+      propertyPath: WhenPegado.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3886369de614bb478f4c3504128244d, type: 3}
 --- !u!1001 &4309434838029107730
@@ -2914,6 +2953,38 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3645852631650608597, guid: 4a91227c9cde67040946e08de702e5e2, type: 3}
+      propertyPath: WhenPegado.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3645852631650608597, guid: 4a91227c9cde67040946e08de702e5e2, type: 3}
+      propertyPath: whenCambioVida.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3645852631650608597, guid: 4a91227c9cde67040946e08de702e5e2, type: 3}
+      propertyPath: WhenPegado.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3645852631650608597, guid: 4a91227c9cde67040946e08de702e5e2, type: 3}
+      propertyPath: WhenPegado.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4309434838029107731}
+    - target: {fileID: 3645852631650608597, guid: 4a91227c9cde67040946e08de702e5e2, type: 3}
+      propertyPath: whenCambioVida.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3645852631650608597, guid: 4a91227c9cde67040946e08de702e5e2, type: 3}
+      propertyPath: whenCambioVida.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3645852631650608597, guid: 4a91227c9cde67040946e08de702e5e2, type: 3}
+      propertyPath: WhenPegado.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3645852631650608597, guid: 4a91227c9cde67040946e08de702e5e2, type: 3}
+      propertyPath: WhenPegado.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: AnimacionMuerte
+      objectReference: {fileID: 0}
+    - target: {fileID: 3645852631650608597, guid: 4a91227c9cde67040946e08de702e5e2, type: 3}
       propertyPath: whenCambioVida.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1008771016}
@@ -2921,6 +2992,50 @@ PrefabInstance:
       propertyPath: whenCambioVida.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1008771016}
+    - target: {fileID: 3645852631650608597, guid: 4a91227c9cde67040946e08de702e5e2, type: 3}
+      propertyPath: whenCambioVida.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1008771016}
+    - target: {fileID: 3645852631650608597, guid: 4a91227c9cde67040946e08de702e5e2, type: 3}
+      propertyPath: whenCambioVida.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3645852631650608597, guid: 4a91227c9cde67040946e08de702e5e2, type: 3}
+      propertyPath: whenCambioVida.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: QuitarVida1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3645852631650608597, guid: 4a91227c9cde67040946e08de702e5e2, type: 3}
+      propertyPath: whenCambioVida.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: CambiarVida1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3645852631650608597, guid: 4a91227c9cde67040946e08de702e5e2, type: 3}
+      propertyPath: whenCambioVida.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: CambiarVida1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3645852631650608597, guid: 4a91227c9cde67040946e08de702e5e2, type: 3}
+      propertyPath: WhenPegado.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MoviminetoRanaXInput, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3645852631650608597, guid: 4a91227c9cde67040946e08de702e5e2, type: 3}
+      propertyPath: whenCambioVida.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3645852631650608597, guid: 4a91227c9cde67040946e08de702e5e2, type: 3}
+      propertyPath: whenCambioVida.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: GameManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3645852631650608597, guid: 4a91227c9cde67040946e08de702e5e2, type: 3}
+      propertyPath: WhenPegado.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3645852631650608597, guid: 4a91227c9cde67040946e08de702e5e2, type: 3}
+      propertyPath: whenCambioVida.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3645852631650608597, guid: 4a91227c9cde67040946e08de702e5e2, type: 3}
+      propertyPath: whenCambioVida.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4309434837866435602, guid: 4a91227c9cde67040946e08de702e5e2, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.x
       value: 2.4375
@@ -3007,3 +3122,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a91227c9cde67040946e08de702e5e2, type: 3}
+--- !u!114 &4309434838029107731 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4309434839038333082, guid: 4a91227c9cde67040946e08de702e5e2, type: 3}
+  m_PrefabInstance: {fileID: 4309434838029107730}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1157206658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb365d0341500be4eadc7ccf6a7833a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
