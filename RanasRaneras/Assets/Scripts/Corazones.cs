@@ -16,7 +16,7 @@ public class Corazones : MonoBehaviour
 
 
     [SerializeField]
-    MyIntEvent whenCambioVida, WhenPegado;
+    public MyIntEvent whenCambioVida, WhenPegado;
 
     public int Vida
     {

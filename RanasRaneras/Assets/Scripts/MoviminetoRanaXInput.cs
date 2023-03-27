@@ -34,15 +34,11 @@ public class MoviminetoRanaXInput : MonoBehaviour
     {
         animatorinfo = anim.GetCurrentAnimatorClipInfo(0);
         string current_animation = animatorinfo[0].clip.name;
-        if (current_animation == "Rana1Caminar" || current_animation=="Rana2Caminar")
+        if (current_animation == "Rana1Caminar" || current_animation=="Rana2Caminar"|| current_animation == "Rana1Jump2" || current_animation == "Rana2Jump2")
         {
             rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
         }
-
-        if (current_animation != "Rana1Caminar" || current_animation != "Rana2Pegar")
-        {
-            //rb.isKinematic = true;
-        }
+       
 
         if(horizontal > 0f)
         {
@@ -61,12 +57,7 @@ public class MoviminetoRanaXInput : MonoBehaviour
         if (horizontal == 0)
         {
             anim.SetBool("Caminar", false);
-        }
-
-        if (rb.velocity.y < 0)
-        {
-            anim.SetTrigger("Suelo");
-        }
+        }       
 
         //RaycastHit2D raycastHit = Physics2D.BoxCast(groundcheck.position, boxCollider.bounds.size, 0, Vector2.down, 0.1f, ranaLayer);
         RaycastHit2D raycastHit = Physics2D.Raycast(groundcheck.position, Vector2.down, 0.1f, ranaLayer);
@@ -84,8 +75,14 @@ public class MoviminetoRanaXInput : MonoBehaviour
 
         if (Isgrounded())
         {
-            if(current_animation!="Rana1Jump" || current_animation!="Rana2Jump"||current_animation!="Rana1Idle"||current_animation!="Rana2Idle")
-                anim.SetTrigger("Suelo");
+            if(current_animation=="Rana1Jump2" || current_animation == "Rana2Jump2")
+            {
+                anim.SetBool("Suelo", true);
+            }
+            else
+            {
+                anim.SetBool("Suelo", false);
+            }
         }
     }
 
@@ -205,9 +202,23 @@ public class MoviminetoRanaXInput : MonoBehaviour
         empj.Activar();
     }
 
-    public void AnimacionMuerte()
+    public IEnumerator AnimacionMuerte()
     {
-        anim.SetBool("Pegado", true);
+
+        //anim.SetBool("Pegado", true);
+
+        anim.SetTrigger("PegadoT");
+
         Debug.Log("Esto se hace");
+
+        yield return new WaitForSeconds(1);
+
+        Corazones cora = GetComponent<Corazones>();
+        cora.WhenPegado.Invoke(cora.Vida);
+    }
+
+    public void LlamarNumerator()
+    {
+        StartCoroutine(AnimacionMuerte());
     }
 }

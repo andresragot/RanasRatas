@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CaidaPlataformas : MonoBehaviour
 {
-    [SerializeField] GameObject prefabPlataforma;
+    [SerializeField] GameObject prefabPlataforma, prefabAviso;
     [SerializeField] float limiteInferior = -8.82f, limiteSuperior = 8.8f;
     [SerializeField] float posicionY=8;
     [SerializeField] float valorActualTimer;
@@ -48,6 +48,9 @@ public class CaidaPlataformas : MonoBehaviour
         GameObject clon = Instantiate(prefabPlataforma);
         float x = (int)Random.Range(limiteInferior, limiteSuperior);
         clon.transform.position = new Vector3(x, posicionY, 0);
+
+        clon = Instantiate(prefabAviso);
+        clon.transform.position = new Vector3(x, 2.5f, 0);
     }
    
 }

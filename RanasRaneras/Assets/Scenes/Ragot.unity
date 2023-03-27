@@ -337,7 +337,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5f9f4b862db1d4649ba73eea7160f8f5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d052e903f37dafa4fa784335c3474661, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1555,7 +1555,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1008771015}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 315.1317, y: 176.28262, z: 0.64803696}
+  m_LocalPosition: {x: 0, y: 4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1718,7 +1718,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4615423423fb07f4d9337e23774eeaf4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 382b3dddda3f7b6439c0aa88762da08d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1788,7 +1788,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.6, g: 0.5882353, b: 0.50980395, a: 0}
+  m_BackGroundColor: {r: 0.2784314, g: 0.2784314, b: 0.2784314, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -2422,6 +2422,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Controllers
       objectReference: {fileID: 0}
+    - target: {fileID: 6194776471880505597, guid: a186034eb33b6d045a8ce692e30977ed, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a186034eb33b6d045a8ce692e30977ed, type: 3}
 --- !u!1 &1576056161 stripped
@@ -2822,7 +2826,7 @@ Tilemap:
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
-  m_Color: {r: 1, g: 1, b: 1, a: 0.54509807}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.49019608}
   m_Origin: {x: 0, y: 0, z: 0}
   m_Size: {x: 1, y: 1, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
@@ -2854,7 +2858,7 @@ PrefabInstance:
     - target: {fileID: 2815002383751694830, guid: c3886369de614bb478f4c3504128244d, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 03f104ae3d472ca45b93f32db573d18e, type: 2}
+      objectReference: {fileID: 9100000, guid: 6891dc04b95699145bef698d31d1e9c4, type: 2}
     - target: {fileID: 2815002383751694833, guid: c3886369de614bb478f4c3504128244d, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -2865,7 +2869,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2815002383751694833, guid: c3886369de614bb478f4c3504128244d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.73
+      value: -4.01
       objectReference: {fileID: 0}
     - target: {fileID: 2815002383751694833, guid: c3886369de614bb478f4c3504128244d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2873,7 +2877,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2815002383751694833, guid: c3886369de614bb478f4c3504128244d, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2815002383751694833, guid: c3886369de614bb478f4c3504128244d, type: 3}
       propertyPath: m_LocalRotation.x
@@ -2881,7 +2885,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2815002383751694833, guid: c3886369de614bb478f4c3504128244d, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2815002383751694833, guid: c3886369de614bb478f4c3504128244d, type: 3}
       propertyPath: m_LocalRotation.z
@@ -2893,7 +2897,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2815002383751694833, guid: c3886369de614bb478f4c3504128244d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 2815002383751694833, guid: c3886369de614bb478f4c3504128244d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -2917,30 +2921,42 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8197209123980671529, guid: c3886369de614bb478f4c3504128244d, type: 3}
       propertyPath: WhenPegado.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8197209123980671529, guid: c3886369de614bb478f4c3504128244d, type: 3}
       propertyPath: WhenPegado.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1577471854}
+      objectReference: {fileID: 1008771016}
+    - target: {fileID: 8197209123980671529, guid: c3886369de614bb478f4c3504128244d, type: 3}
+      propertyPath: whenCambioVida.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8197209123980671529, guid: c3886369de614bb478f4c3504128244d, type: 3}
       propertyPath: WhenPegado.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8197209123980671529, guid: c3886369de614bb478f4c3504128244d, type: 3}
       propertyPath: WhenPegado.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: AnimacionMuerte
+      value: QuitarVida2
       objectReference: {fileID: 0}
     - target: {fileID: 8197209123980671529, guid: c3886369de614bb478f4c3504128244d, type: 3}
       propertyPath: whenCambioVida.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1008771016}
+      objectReference: {fileID: 1577471854}
     - target: {fileID: 8197209123980671529, guid: c3886369de614bb478f4c3504128244d, type: 3}
       propertyPath: whenCambioVida.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1008771016}
     - target: {fileID: 8197209123980671529, guid: c3886369de614bb478f4c3504128244d, type: 3}
+      propertyPath: whenCambioVida.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LlamarNumerator
+      objectReference: {fileID: 0}
+    - target: {fileID: 8197209123980671529, guid: c3886369de614bb478f4c3504128244d, type: 3}
       propertyPath: WhenPegado.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8197209123980671529, guid: c3886369de614bb478f4c3504128244d, type: 3}
+      propertyPath: whenCambioVida.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: MoviminetoRanaXInput, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8197209123980671529, guid: c3886369de614bb478f4c3504128244d, type: 3}
@@ -3006,7 +3022,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3645852631650608597, guid: 4a91227c9cde67040946e08de702e5e2, type: 3}
       propertyPath: whenCambioVida.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: AnimacionMuerte
+      value: LlamarNumerator
       objectReference: {fileID: 0}
     - target: {fileID: 3645852631650608597, guid: 4a91227c9cde67040946e08de702e5e2, type: 3}
       propertyPath: whenCambioVida.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
@@ -3086,11 +3102,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4309434839038333077, guid: 4a91227c9cde67040946e08de702e5e2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.43
+      value: -6.1
       objectReference: {fileID: 0}
     - target: {fileID: 4309434839038333077, guid: 4a91227c9cde67040946e08de702e5e2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.78
+      value: -3.997
       objectReference: {fileID: 0}
     - target: {fileID: 4309434839038333077, guid: 4a91227c9cde67040946e08de702e5e2, type: 3}
       propertyPath: m_LocalPosition.z
