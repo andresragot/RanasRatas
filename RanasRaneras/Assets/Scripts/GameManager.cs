@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public int counter = 3;
+    public int counter2 = 3;
 
     //CargaryGuardar cargaryGuardar;
     [System.Serializable] 
@@ -75,6 +77,7 @@ public class GameManager : MonoBehaviour
         CambiarVida2(Vida2);
         Rana1.GetComponent<Corazones>().setVida(Vida1);
         Rana2.GetComponent<Corazones>().setVida(Vida2);
+
     }
 
 
@@ -85,6 +88,7 @@ public class GameManager : MonoBehaviour
         vic1 = victoria1.GetComponent<Image>();
         vic2 = victoria2.GetComponent<Image>();
         //cargaryGuardar.Guardar();
+
     }
 
     // Update is called once per frame
@@ -105,13 +109,21 @@ public class GameManager : MonoBehaviour
         {
             Time.timeScale = 0;
         }
+
+        if (vida1 < 3)
+        {
+            counter--;
+        }
+        if(vida2 < 3)
+        {
+            counter2--;
+        }
     }
 
     public void QuitarVida1(int a)
     {
         Vida1 = a;
         SceneManager.LoadScene(1);
-
     }
 
     public void QuitarVida2(int a)
@@ -145,17 +157,18 @@ public class GameManager : MonoBehaviour
             corazon11.color = Color.black;
             corazon21.color = Color.black;
             corazon31.color = Color.black;
-
-        }
+            
+}
         else if (a == 1)
         {
             corazon21.color = Color.black;
             corazon31.color = Color.black;
-
+            
         }
         else if (a == 2)
         {
             corazon31.color = Color.black;
+            
         }
     }
 
@@ -166,16 +179,18 @@ public class GameManager : MonoBehaviour
             corazon12.color = Color.black;
             corazon22.color = Color.black;
             corazon32.color = Color.black;
-
+            
         }
         else if (a == 1)
         {
             corazon22.color = Color.black;
             corazon32.color = Color.black;
+           
         }
         else if (a == 2)
         {
             corazon32.color = Color.black;
+           
         }
     }
 
