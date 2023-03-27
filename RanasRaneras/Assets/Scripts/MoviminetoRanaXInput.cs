@@ -63,6 +63,11 @@ public class MoviminetoRanaXInput : MonoBehaviour
             anim.SetBool("Caminar", false);
         }
 
+        if (rb.velocity.y < 0)
+        {
+            anim.SetTrigger("Suelo");
+        }
+
         //RaycastHit2D raycastHit = Physics2D.BoxCast(groundcheck.position, boxCollider.bounds.size, 0, Vector2.down, 0.1f, ranaLayer);
         RaycastHit2D raycastHit = Physics2D.Raycast(groundcheck.position, Vector2.down, 0.1f, ranaLayer);
         if (raycastHit.collider!=null /*&& raycastHit.collider.gameObject != this.gameObject*/ && raycastHit.collider.tag == "Rana" && raycastHit.collider.GetComponent<MoviminetoRanaXInput>().Isgrounded())
@@ -77,6 +82,11 @@ public class MoviminetoRanaXInput : MonoBehaviour
             }
         }
 
+        if (Isgrounded())
+        {
+            if(current_animation!="Rana1Jump" || current_animation!="Rana2Jump"||current_animation!="Rana1Idle"||current_animation!="Rana2Idle")
+                anim.SetTrigger("Suelo");
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -198,5 +208,6 @@ public class MoviminetoRanaXInput : MonoBehaviour
     public void AnimacionMuerte()
     {
         anim.SetBool("Pegado", true);
+        Debug.Log("Esto se hace");
     }
 }

@@ -54,7 +54,7 @@ public class MatarRana : MonoBehaviour
                 rb.constraints = RigidbodyConstraints2D.FreezeAll;
                 timer-=Time.deltaTime;
             }
-            rb.constraints = originalConstraints;
+            //rb.constraints = originalConstraints;
         }
         borrarPlataforma();
     }
