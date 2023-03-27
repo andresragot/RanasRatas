@@ -2851,6 +2851,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2815002383751694830, guid: c3886369de614bb478f4c3504128244d, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 03f104ae3d472ca45b93f32db573d18e, type: 2}
     - target: {fileID: 2815002383751694833, guid: c3886369de614bb478f4c3504128244d, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -2962,15 +2966,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3645852631650608597, guid: 4a91227c9cde67040946e08de702e5e2, type: 3}
       propertyPath: WhenPegado.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3645852631650608597, guid: 4a91227c9cde67040946e08de702e5e2, type: 3}
       propertyPath: WhenPegado.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 4309434838029107731}
+      objectReference: {fileID: 1008771016}
     - target: {fileID: 3645852631650608597, guid: 4a91227c9cde67040946e08de702e5e2, type: 3}
       propertyPath: whenCambioVida.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3645852631650608597, guid: 4a91227c9cde67040946e08de702e5e2, type: 3}
       propertyPath: whenCambioVida.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
@@ -2982,12 +2986,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3645852631650608597, guid: 4a91227c9cde67040946e08de702e5e2, type: 3}
       propertyPath: WhenPegado.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: AnimacionMuerte
+      value: QuitarVida1
       objectReference: {fileID: 0}
     - target: {fileID: 3645852631650608597, guid: 4a91227c9cde67040946e08de702e5e2, type: 3}
       propertyPath: whenCambioVida.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1008771016}
+      objectReference: {fileID: 4309434838029107731}
     - target: {fileID: 3645852631650608597, guid: 4a91227c9cde67040946e08de702e5e2, type: 3}
       propertyPath: whenCambioVida.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -3002,7 +3006,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3645852631650608597, guid: 4a91227c9cde67040946e08de702e5e2, type: 3}
       propertyPath: whenCambioVida.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: QuitarVida1
+      value: AnimacionMuerte
       objectReference: {fileID: 0}
     - target: {fileID: 3645852631650608597, guid: 4a91227c9cde67040946e08de702e5e2, type: 3}
       propertyPath: whenCambioVida.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
@@ -3014,11 +3018,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3645852631650608597, guid: 4a91227c9cde67040946e08de702e5e2, type: 3}
       propertyPath: WhenPegado.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: MoviminetoRanaXInput, Assembly-CSharp
+      value: GameManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3645852631650608597, guid: 4a91227c9cde67040946e08de702e5e2, type: 3}
       propertyPath: whenCambioVida.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: GameManager, Assembly-CSharp
+      value: MoviminetoRanaXInput, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3645852631650608597, guid: 4a91227c9cde67040946e08de702e5e2, type: 3}
       propertyPath: whenCambioVida.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName

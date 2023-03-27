@@ -14,16 +14,9 @@ public class Corazones : MonoBehaviour
 
     }
 
-    [System.Serializable]
-    public class MyUnityEvent : UnityEngine.Events.UnityEvent
-    {
-
-    }
 
     [SerializeField]
-    MyIntEvent whenCambioVida;
-    [SerializeField]
-    MyUnityEvent WhenPegado;
+    MyIntEvent whenCambioVida, WhenPegado;
 
     public int Vida
     {
@@ -31,8 +24,8 @@ public class Corazones : MonoBehaviour
         set
         {
             _vida = value;
-            WhenPegado.Invoke();
-            //whenCambioVida.Invoke(_vida);
+            //WhenPegado.Invoke();
+            whenCambioVida.Invoke(_vida);
         }
     }
 
@@ -44,6 +37,6 @@ public class Corazones : MonoBehaviour
 
     public void InvocarEvento()
     {
-        whenCambioVida.Invoke(_vida);
+        WhenPegado.Invoke(_vida);
     }
 }

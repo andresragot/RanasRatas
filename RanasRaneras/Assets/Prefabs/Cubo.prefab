@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 220886773690226825}
   - component: {fileID: 220886773690226828}
   - component: {fileID: 220886773690226831}
-  - component: {fileID: 4268782094043227556}
   - component: {fileID: 5047583348013551544}
   m_Layer: 6
   m_Name: Cubo
@@ -136,21 +135,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 5
---- !u!114 &4268782094043227556
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 220886773690226824}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61cee44e25654f44199ca43e0f89b65d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  whenCambioVida:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &5047583348013551544
 MonoBehaviour:
   m_ObjectHideFlags: 0
