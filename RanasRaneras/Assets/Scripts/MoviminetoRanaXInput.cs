@@ -229,4 +229,13 @@ public class MoviminetoRanaXInput : MonoBehaviour
     {
         StartCoroutine(AnimacionMuerte());
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Respawn")
+        {
+            Debug.Log("Se hace");
+            GameManager.Singleton.ResetEscena();
+        }
+    }
 }

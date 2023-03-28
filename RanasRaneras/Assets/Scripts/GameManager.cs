@@ -133,6 +133,11 @@ public class GameManager : MonoBehaviour
 
     }
 
+    public void ResetEscena()
+    {
+        SceneManager.LoadScene(1);
+    }
+
     public void Regresar()
     {
         Time.timeScale = 1;
