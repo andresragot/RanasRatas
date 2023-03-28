@@ -448,6 +448,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb365d0341500be4eadc7ccf6a7833a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  counter: 3
   groundcheck: {fileID: 4309434838794799263}
   groundlayer:
     serializedVersion: 2
@@ -458,6 +459,7 @@ MonoBehaviour:
   speed: 10
   horizontal: 0
   jumpingpower: 20
+  anim: {fileID: 0}
 --- !u!61 &4309434839038333083
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -516,7 +518,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4c6bf83d0b64394ea88aecf3eea2402, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  magnitude: 500
+  magnitude: 800
 --- !u!114 &3645852631650608597
 MonoBehaviour:
   m_ObjectHideFlags: 0

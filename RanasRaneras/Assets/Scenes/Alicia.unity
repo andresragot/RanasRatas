@@ -2245,7 +2245,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 925890985}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.2476134, y: 10.88, z: -0.0050649643}
+  m_LocalPosition: {x: 1.2476134, y: 11.88, z: -0.0050649643}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2319,6 +2319,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dc32d442c8cc5248b15cdfea989525a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  counter: 3
+  counter2: 3
   victoria1: {fileID: 10657327}
   victoria2: {fileID: 1766331553}
   corazon11: {fileID: 1000394130}
