@@ -11,8 +11,11 @@ public class MatarRana : MonoBehaviour
     [SerializeField]
     LayerMask ground;
 
+    Animator anim;
     BoxCollider2D box;
     Rigidbody2D rb;
+
+    MoviminetoRanaXInput r1;
 
     RaycastHit2D raycast, raycastGround;
 
@@ -24,6 +27,7 @@ public class MatarRana : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GetComponent<Animator>();
         box = GetComponent<BoxCollider2D>();
         rb = GetComponent<Rigidbody2D>();
         timerInicial = timer;
@@ -33,6 +37,7 @@ public class MatarRana : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (DetectarRana())
         {
             if(raycast.collider!=null && raycast.collider.tag == "Rana")
@@ -44,8 +49,11 @@ public class MatarRana : MonoBehaviour
                 Corazones cora = raycast.collider.GetComponent<Corazones>();
                 cora.Vida--;
                 Destroy(gameObject);
+
             }
         }
+
+        
 
         else if (DetectarSuelo())
         {

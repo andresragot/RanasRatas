@@ -5,6 +5,9 @@ using UnityEngine.InputSystem;
 
 public class MoviminetoRanaXInput : MonoBehaviour
 {
+    Corazones r1;
+    public int counter = 3;
+
     GameManager c1;
     GameManager c2;
 
@@ -18,8 +21,7 @@ public class MoviminetoRanaXInput : MonoBehaviour
     private bool facingright = true;
     private BoxCollider2D boxCollider;
 
-    private Animation Red;
-    private Animator anim;
+    public Animator anim;
     AnimatorClipInfo[] animatorinfo;
     EmpujonRana empj;
 
@@ -107,6 +109,14 @@ public class MoviminetoRanaXInput : MonoBehaviour
             rb.gravityScale = 10;
             speed = 0;
         }
+
+        /*if(collision.gameObject.tag == "Plataforma")
+        {
+            anim.SetTrigger("Loss");
+            anim.Play("LifeLo");
+
+            anim.Play("LifeLo2");
+        }*/
 
     }
 
@@ -215,7 +225,6 @@ public class MoviminetoRanaXInput : MonoBehaviour
         //anim.SetBool("Pegado", true);
 
         anim.SetTrigger("PegadoT");
-
         Debug.Log("Esto se hace");
 
 
@@ -236,6 +245,9 @@ public class MoviminetoRanaXInput : MonoBehaviour
         {
             Debug.Log("Se hace");
             GameManager.Singleton.ResetEscena();
+            
         }
+ 
     }
+
 }

@@ -14,7 +14,6 @@ public class Corazones : MonoBehaviour
 
     }
 
-
     [SerializeField]
     public MyIntEvent whenCambioVida, WhenPegado;
 
@@ -39,4 +38,6 @@ public class Corazones : MonoBehaviour
     {
         WhenPegado.Invoke(_vida);
     }
+
+
 }
