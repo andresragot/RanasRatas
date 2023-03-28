@@ -92,6 +92,8 @@ public class MoviminetoRanaXInput : MonoBehaviour
                 anim.SetBool("Suelo", false);
             }
         }
+
+     
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

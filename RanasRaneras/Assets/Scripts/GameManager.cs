@@ -7,8 +7,16 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public int c1 = 3;
+    public int c2 = 3;
+
+    Gradient gradient;
+    GradientColorKey[] colorkey;
+
     public int counter = 3;
     public int counter2 = 3;
+
+    private Animator anim;
 
     //CargaryGuardar cargaryGuardar;
     [System.Serializable] 
@@ -89,6 +97,8 @@ public class GameManager : MonoBehaviour
         vic2 = victoria2.GetComponent<Image>();
         //cargaryGuardar.Guardar();
 
+        anim = GetComponent<Animator>();
+
     }
 
     // Update is called once per frame
@@ -110,14 +120,7 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 0;
         }
 
-        if (vida1 < 3)
-        {
-            counter--;
-        }
-        if(vida2 < 3)
-        {
-            counter2--;
-        }
+
     }
 
     public void QuitarVida1(int a)
@@ -159,20 +162,24 @@ public class GameManager : MonoBehaviour
     {
         if (a == 0)
         {
-            corazon11.color = Color.black;
-            corazon21.color = Color.black;
-            corazon31.color = Color.black;
+            c1 = 2;
+
+            corazon11.color = Color.clear;
+            corazon21.color = Color.clear;
+            corazon31.color = Color.clear;
             
 }
         else if (a == 1)
         {
-            corazon21.color = Color.black;
-            corazon31.color = Color.black;
+            c1 = 1;
+            corazon21.color = Color.clear;
+            corazon31.color = Color.clear;
             
         }
         else if (a == 2)
         {
-            corazon31.color = Color.black;
+            c1 = 0;
+            corazon31.color = Color.clear;
             
         }
     }
@@ -181,20 +188,21 @@ public class GameManager : MonoBehaviour
     {
         if (a == 0)
         {
-            corazon12.color = Color.black;
-            corazon22.color = Color.black;
-            corazon32.color = Color.black;
-            
+
+            corazon12.color = Color.clear;
+            corazon22.color = Color.clear;
+            corazon32.color = Color.clear;
+
         }
         else if (a == 1)
         {
-            corazon22.color = Color.black;
-            corazon32.color = Color.black;
+            corazon22.color = Color.clear;
+            corazon32.color = Color.clear;
            
         }
         else if (a == 2)
         {
-            corazon32.color = Color.black;
+            corazon32.color = Color.clear;
            
         }
     }
