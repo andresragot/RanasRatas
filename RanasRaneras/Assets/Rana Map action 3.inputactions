@@ -1,5 +1,5 @@
 {
-    "name": "Rana Map action 1",
+    "name": "Rana Map action 3",
     "maps": [
         {
             "name": "Player",
@@ -57,7 +57,7 @@
                 {
                     "name": "left",
                     "id": "d2581a9b-1d11-4566-b27d-b92aff5fabbc",
-                    "path": "<Keyboard>/a",
+                    "path": "<Keyboard>/leftArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
@@ -68,7 +68,7 @@
                 {
                     "name": "right",
                     "id": "fcfe95b8-67b9-4526-84b5-5d0bc98d6400",
-                    "path": "<Keyboard>/d",
+                    "path": "<Keyboard>/rightArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
@@ -79,7 +79,7 @@
                 {
                     "name": "",
                     "id": "7673b07d-b9e4-43d3-983e-b6fb2f55a062",
-                    "path": "<Keyboard>/b",
+                    "path": "<Keyboard>/minus",
                     "interactions": "Tap",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
@@ -90,7 +90,7 @@
                 {
                     "name": "",
                     "id": "0eec0436-d16c-44e0-b340-3499665c6603",
-                    "path": "<Keyboard>/w",
+                    "path": "<Keyboard>/upArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
