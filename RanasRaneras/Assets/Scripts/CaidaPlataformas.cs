@@ -26,14 +26,14 @@ public class CaidaPlataformas : MonoBehaviour
         timer2 -= Time.deltaTime;
         if (timer2 <= 0)
         {
-            if(valorActualTimer > 0.5) 
+            if(valorActualTimer > 1.5) 
             { 
                 valorActualTimer -= 0.5f;
                 timer2 = valorInicialTimer2;
             }
             else 
             { 
-                valorActualTimer = 0.5f; 
+                valorActualTimer = 1.5f; 
                 timer2 = valorInicialTimer2; 
             }
         }

@@ -37,8 +37,16 @@ public class MatarRana : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (DetectarSuelo())
+        {
+            if (raycastGround.collider.gameObject != this && raycastGround.collider != null)
+            {
+                rb.constraints = RigidbodyConstraints2D.FreezeAll;
+                timer -= Time.deltaTime;
+            }
+        }
 
-        if (DetectarRana())
+        else if (DetectarRana())
         {
             if(raycast.collider!=null && raycast.collider.tag == "Rana")
             {
@@ -52,18 +60,8 @@ public class MatarRana : MonoBehaviour
 
             }
         }
+        rb.constraints = originalConstraints;
 
-        
-
-        else if (DetectarSuelo())
-        {
-            if (raycastGround.collider.gameObject != this && raycastGround.collider != null)
-            {
-                rb.constraints = RigidbodyConstraints2D.FreezeAll;
-                timer-=Time.deltaTime;
-            }
-            //rb.constraints = originalConstraints;
-        }
         borrarPlataforma();
     }
 

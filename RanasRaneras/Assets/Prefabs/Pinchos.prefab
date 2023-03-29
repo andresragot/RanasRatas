@@ -43,7 +43,6 @@ GameObject:
   - component: {fileID: 4848728736539955771}
   - component: {fileID: 4848728736539955774}
   - component: {fileID: 4848728736539955773}
-  - component: {fileID: 8892173792150597398}
   - component: {fileID: 4848728736539955763}
   m_Layer: 6
   m_Name: Pinchos
@@ -133,18 +132,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.020069122}
+  m_Offset: {x: -0.022181034, y: -0.005280018}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.32, y: 0.32}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.91570866, y: 0.6211157}
+  m_Size: {x: 0.55448246, y: 1.0267029}
   m_EdgeRadius: 0
 --- !u!50 &4848728736539955773
 Rigidbody2D:
@@ -167,24 +166,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 5
---- !u!114 &8892173792150597398
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4848728736539955770}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61cee44e25654f44199ca43e0f89b65d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  whenCambioVida:
-    m_PersistentCalls:
-      m_Calls: []
-  WhenPegado:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &4848728736539955763
 MonoBehaviour:
   m_ObjectHideFlags: 0
