@@ -24,9 +24,13 @@ public class EmpujonRana : MonoBehaviour
     {
         anim.SetTrigger("Pegar");
     }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        anim.SetTrigger("Regresar");
+        if(collision.gameObject!= transform.parent)
+        {
+            anim.SetTrigger("Regresar");
+        }
     }
 
 }

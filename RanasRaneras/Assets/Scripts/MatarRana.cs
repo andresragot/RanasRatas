@@ -41,16 +41,15 @@ public class MatarRana : MonoBehaviour
         {
             if (raycastGround.collider.gameObject != this && raycastGround.collider != null)
             {
-                //rb.constraints = RigidbodyConstraints2D.FreezeAll;
+                rb.constraints = RigidbodyConstraints2D.FreezeAll;
                 timer -= Time.deltaTime;
             }
         }
-        //else if(!DetectarSuelo())
-        //{
-        //    rb.constraints = originalConstraints;
-        //}
-
-        if (DetectarRana())
+        else if(!DetectarSuelo())
+        {
+            rb.constraints = originalConstraints;
+        }
+        else if (DetectarRana())
         {
             if(raycast.collider!=null && raycast.collider.tag == "Rana")
             {
