@@ -10,6 +10,7 @@ public class CambioEscena : MonoBehaviour
         SceneManager.LoadScene(1);
         GameManager.Vida1 = 3;
         GameManager.Vida2 = 3;
+        Time.timeScale = 1;
     }
 
     public void Menu()

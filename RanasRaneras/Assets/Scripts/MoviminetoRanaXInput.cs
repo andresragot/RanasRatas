@@ -26,6 +26,10 @@ public class MoviminetoRanaXInput : MonoBehaviour
     EmpujonRana empj;
 
     float SpeedF;
+
+    string current_animation;
+
+    RigidbodyConstraints2D originalConstraints;
     // Start is called before the first frame update
     private void Start()
     {
@@ -35,68 +39,78 @@ public class MoviminetoRanaXInput : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         SpeedF = speed;
 
+        originalConstraints = rb.constraints;
+
         //life.CambiarVida1(d);
     }
     // Update is called once per frame
     void Update()
     {
-        animatorinfo = anim.GetCurrentAnimatorClipInfo(0);
-        string current_animation = animatorinfo[0].clip.name;
-        if (current_animation == "Rana1Caminar" || current_animation=="Rana2Caminar"|| current_animation == "Rana1Jump2" || current_animation == "Rana2Jump2")
+        if (Time.timeScale == 0)
         {
-            rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
+            rb.constraints = RigidbodyConstraints2D.FreezeAll;
         }
         else
         {
-            rb.velocity = new Vector2(0, rb.velocity.y); 
-        }
-       
-
-        if(horizontal > 0f)
-        {
-            //rb.velocity = new Vector2(1 * speed, rb.velocity.y);
-            Quaternion rotation = Quaternion.Euler(0, 0, 0);
-            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, 1);
-
-        }
-        else if (horizontal < 0f)
-        {
-            //rb.velocity = new Vector2(-1 * speed, rb.velocity.y);
-            Quaternion rotation = Quaternion.Euler(0, 180, 0);
-            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, 1); ;
-        }
-
-        if (horizontal == 0)
-        {
-            anim.SetBool("Caminar", false);
-        }       
-
-        //RaycastHit2D raycastHit = Physics2D.BoxCast(groundcheck.position, boxCollider.bounds.size, 0, Vector2.down, 0.1f, ranaLayer);
-        RaycastHit2D raycastHit = Physics2D.Raycast(groundcheck.position, Vector2.down, 0.1f, ranaLayer);
-        if (raycastHit.collider!=null /*&& raycastHit.collider.gameObject != this.gameObject*/ && raycastHit.collider.tag == "Rana" && raycastHit.collider.GetComponent<MoviminetoRanaXInput>().Isgrounded())
-        {
-            if (raycastHit.collider.gameObject == gameObject)
+            rb.constraints = originalConstraints;
+            if (horizontal > 0f)
             {
-                return;
+                //rb.velocity = new Vector2(1 * speed, rb.velocity.y);
+                Quaternion rotation = Quaternion.Euler(0, 0, 0);
+                transform.rotation = Quaternion.Slerp(transform.rotation, rotation, 1);
+
             }
-            else
+            else if (horizontal < 0f)
             {
-                rb.AddForce(new Vector2(rb.velocity.x, 2), ForceMode2D.Impulse);
+                //rb.velocity = new Vector2(-1 * speed, rb.velocity.y);
+                Quaternion rotation = Quaternion.Euler(0, 180, 0);
+                transform.rotation = Quaternion.Slerp(transform.rotation, rotation, 1); ;
+                animatorinfo = anim.GetCurrentAnimatorClipInfo(0);
+                current_animation = animatorinfo[0].clip.name;
+                if (current_animation == "Rana1Caminar" || current_animation == "Rana2Caminar" || current_animation == "Rana1Jump2" || current_animation == "Rana2Jump2")
+                {
+                    rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
+                }
+                else
+                {
+                    rb.velocity = new Vector2(0, rb.velocity.y);
+                }
+
+
+
+
+                if (horizontal == 0)
+                {
+                    anim.SetBool("Caminar", false);
+                }
+
+                //RaycastHit2D raycastHit = Physics2D.BoxCast(groundcheck.position, boxCollider.bounds.size, 0, Vector2.down, 0.1f, ranaLayer);
+                RaycastHit2D raycastHit = Physics2D.Raycast(groundcheck.position, Vector2.down, 0.1f, ranaLayer);
+                if (raycastHit.collider != null /*&& raycastHit.collider.gameObject != this.gameObject*/ && raycastHit.collider.tag == "Rana" && raycastHit.collider.GetComponent<MoviminetoRanaXInput>().Isgrounded())
+                {
+                    if (raycastHit.collider.gameObject == gameObject)
+                    {
+                        return;
+                    }
+                    else
+                    {
+                        rb.AddForce(new Vector2(rb.velocity.x, 2), ForceMode2D.Impulse);
+                    }
+                }
+
+                if (Isgrounded())
+                {
+                    if (current_animation == "Rana1Jump2" || current_animation == "Rana2Jump2")
+                    {
+                        anim.SetBool("Suelo", true);
+                    }
+                    else
+                    {
+                        anim.SetBool("Suelo", false);
+                    }
+                }
             }
         }
-
-        if (Isgrounded())
-        {
-            if(current_animation=="Rana1Jump2" || current_animation == "Rana2Jump2")
-            {
-                anim.SetBool("Suelo", true);
-            }
-            else
-            {
-                anim.SetBool("Suelo", false);
-            }
-        }
-
      
     }
 
@@ -163,10 +177,6 @@ public class MoviminetoRanaXInput : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
-    {
-
-    }
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -194,9 +204,9 @@ public class MoviminetoRanaXInput : MonoBehaviour
     {
         if(context.performed && Isgrounded())
         {
-
+            if(Time.timeScale==1)
             //rb.AddForce(new Vector2(rb.velocity.x, jumpingpower), ForceMode2D.Impulse);
-            anim.SetTrigger("Saltar");
+                anim.SetTrigger("Saltar");
             //rb.velocity = new Vector2(rb.velocity.x, jumpingpower);
         }
 
@@ -215,7 +225,8 @@ public class MoviminetoRanaXInput : MonoBehaviour
     {
         if (context.performed)
         {
-            anim.SetTrigger("Fire");
+            if(Time.timeScale==1)
+                anim.SetTrigger("Fire");
 
             //rb.isKinematic = false;
         }
