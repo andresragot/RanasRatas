@@ -80,7 +80,7 @@
                     "name": "",
                     "id": "7673b07d-b9e4-43d3-983e-b6fb2f55a062",
                     "path": "<Keyboard>/period",
-                    "interactions": "Tap",
+                    "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "Fire",

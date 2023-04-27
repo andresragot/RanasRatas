@@ -46,6 +46,10 @@ public class MoviminetoRanaXInput : MonoBehaviour
         {
             rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
         }
+        else
+        {
+            rb.velocity = new Vector2(0, rb.velocity.y); 
+        }
        
 
         if(horizontal > 0f)
@@ -190,6 +194,7 @@ public class MoviminetoRanaXInput : MonoBehaviour
     {
         if(context.performed && Isgrounded())
         {
+
             //rb.AddForce(new Vector2(rb.velocity.x, jumpingpower), ForceMode2D.Impulse);
             anim.SetTrigger("Saltar");
             //rb.velocity = new Vector2(rb.velocity.x, jumpingpower);
@@ -227,8 +232,6 @@ public class MoviminetoRanaXInput : MonoBehaviour
         //anim.SetBool("Pegado", true);
 
         anim.SetTrigger("PegadoT");
-        Debug.Log("Esto se hace");
-
 
         yield return new WaitForSeconds(1);
 

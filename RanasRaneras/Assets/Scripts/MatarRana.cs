@@ -11,11 +11,8 @@ public class MatarRana : MonoBehaviour
     [SerializeField]
     LayerMask ground;
 
-    Animator anim;
     BoxCollider2D box;
     Rigidbody2D rb;
-
-    MoviminetoRanaXInput r1;
 
     RaycastHit2D raycast, raycastGround;
 
@@ -45,10 +42,6 @@ public class MatarRana : MonoBehaviour
                 timer -= Time.deltaTime;
             }
         }
-        else if(!DetectarSuelo())
-        {
-            rb.constraints = originalConstraints;
-        }
         else if (DetectarRana())
         {
             if(raycast.collider!=null && raycast.collider.tag == "Rana")
@@ -63,16 +56,14 @@ public class MatarRana : MonoBehaviour
 
             }
         }
+        else if(!DetectarSuelo())
+        {
+            rb.constraints = originalConstraints;
+        }
         borrarPlataforma();
     }
 
     private bool DetectarRana()
-    {
-        raycast = Physics2D.BoxCast(ranaCheck.position, box.bounds.size, 0, Vector2.down, 1, ranaLayer);
-        return raycast;
-    }
-
-    private bool DetectarRana2()
     {
         raycast = Physics2D.BoxCast(ranaCheck.position, box.bounds.size, 0, Vector2.down, 1, ranaLayer);
         return raycast;
