@@ -65,49 +65,49 @@ public class MoviminetoRanaXInput : MonoBehaviour
                 //rb.velocity = new Vector2(-1 * speed, rb.velocity.y);
                 Quaternion rotation = Quaternion.Euler(0, 180, 0);
                 transform.rotation = Quaternion.Slerp(transform.rotation, rotation, 1); ;
-                animatorinfo = anim.GetCurrentAnimatorClipInfo(0);
-                current_animation = animatorinfo[0].clip.name;
-                if (current_animation == "Rana1Caminar" || current_animation == "Rana2Caminar" || current_animation == "Rana1Jump2" || current_animation == "Rana2Jump2")
+            }
+            animatorinfo = anim.GetCurrentAnimatorClipInfo(0);
+            current_animation = animatorinfo[0].clip.name;
+            if (current_animation == "Rana1Caminar" || current_animation == "Rana2Caminar" || current_animation == "Rana1Jump2" || current_animation == "Rana2Jump2")
+            {
+                rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
+            }
+            else
+            {
+                rb.velocity = new Vector2(0, rb.velocity.y);
+            }
+
+
+
+
+            if (horizontal == 0)
+            {
+                anim.SetBool("Caminar", false);
+            }
+
+            //RaycastHit2D raycastHit = Physics2D.BoxCast(groundcheck.position, boxCollider.bounds.size, 0, Vector2.down, 0.1f, ranaLayer);
+            RaycastHit2D raycastHit = Physics2D.Raycast(groundcheck.position, Vector2.down, 0.1f, ranaLayer);
+            if (raycastHit.collider != null /*&& raycastHit.collider.gameObject != this.gameObject*/ && raycastHit.collider.tag == "Rana" && raycastHit.collider.GetComponent<MoviminetoRanaXInput>().Isgrounded())
+            {
+                if (raycastHit.collider.gameObject == gameObject)
                 {
-                    rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
+                    return;
                 }
                 else
                 {
-                    rb.velocity = new Vector2(0, rb.velocity.y);
+                    rb.AddForce(new Vector2(rb.velocity.x, 2), ForceMode2D.Impulse);
                 }
+            }
 
-
-
-
-                if (horizontal == 0)
+            if (Isgrounded())
+            {
+                if (current_animation == "Rana1Jump2" || current_animation == "Rana2Jump2")
                 {
-                    anim.SetBool("Caminar", false);
+                    anim.SetBool("Suelo", true);
                 }
-
-                //RaycastHit2D raycastHit = Physics2D.BoxCast(groundcheck.position, boxCollider.bounds.size, 0, Vector2.down, 0.1f, ranaLayer);
-                RaycastHit2D raycastHit = Physics2D.Raycast(groundcheck.position, Vector2.down, 0.1f, ranaLayer);
-                if (raycastHit.collider != null /*&& raycastHit.collider.gameObject != this.gameObject*/ && raycastHit.collider.tag == "Rana" && raycastHit.collider.GetComponent<MoviminetoRanaXInput>().Isgrounded())
+                else
                 {
-                    if (raycastHit.collider.gameObject == gameObject)
-                    {
-                        return;
-                    }
-                    else
-                    {
-                        rb.AddForce(new Vector2(rb.velocity.x, 2), ForceMode2D.Impulse);
-                    }
-                }
-
-                if (Isgrounded())
-                {
-                    if (current_animation == "Rana1Jump2" || current_animation == "Rana2Jump2")
-                    {
-                        anim.SetBool("Suelo", true);
-                    }
-                    else
-                    {
-                        anim.SetBool("Suelo", false);
-                    }
+                    anim.SetBool("Suelo", false);
                 }
             }
         }
